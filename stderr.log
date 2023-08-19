@@ -1,0 +1,10 @@
+No existe el archivo { [Error: ENOENT: no such file or directory, unlink './public/images/avatars/null']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: './public/images/avatars/null' }
+No existe el archivo { [Error: ENOENT: no such file or directory, unlink './public/images/avatars/null']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'unlink',
+  path: './public/images/avatars/null' }

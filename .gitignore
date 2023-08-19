@@ -1,0 +1,32 @@
+# Dependencias instaladas por npm
+/node_modules
+
+# Archivos generados por npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de configuración
+.env
+*.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Archivos de compilación y construcción
+/build
+/dist
+
+# Dependencias de desarrollo (opcional, si no deseas incluirlos)
+/devDependencies
+
+# Archivos y carpetas generados por herramientas o sistemas específicos
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+
+# Otros archivos específicos de tu proyecto que no deseas versionar
+archivo-personal.txt
+secreto.json

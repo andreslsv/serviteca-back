@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "",
+    "database": "puentese_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "puentese_andres",
+    "password": "4n1mefanatico",
+    "database": "puentese_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "puentese_andres",
+    "password": "4n1mefanatico",
+    "database": "puentese_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
