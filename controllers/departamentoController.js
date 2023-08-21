@@ -1,18 +1,18 @@
 const models = require('../models')
-const Departamentos = models.Departamentos;
+const Departamento = models.Departamento;
 
 getDepartamentos = async (req, res, next) => {
     try {
-        const departamentos = await Departamentos.findAll();
+        const departamentos = await Departamento.findAll();
         res.json(departamentos);
     } catch (error) {
         res.send(error);
     }
 }
 
-getDepartamentos = async (req, res, next) => {
+getDepartamento = async (req, res, next) => {
     try {
-        const departamento = await Departamentos.findOne({
+        const departamento = await Departamento.findOne({
             where: {
                 id: req.params.id
             }
@@ -23,9 +23,9 @@ getDepartamentos = async (req, res, next) => {
     }
 }
 
-setDepartamentos = async (req, res, next) => {
+setDepartamento = async (req, res, next) => {
     try {
-        const departamento = await Departamentos.update(
+        const departamento = await Departamento.update(
             req.body,
             {
                 where: {
@@ -39,18 +39,18 @@ setDepartamentos = async (req, res, next) => {
     }
 }
 
-createDepartamentos = async (req, res, next) => {
+createDepartamento = async (req, res, next) => {
     try {
-        const departamento = await Departamentos.create(req.body);
+        const departamento = await Departamento.create(req.body);
         res.json(departamento);
     } catch (error) {
         res.send(error);
     }
 }
 
-deleteDepartamentos = async (req, res, next) => {
+deleteDepartamento = async (req, res, next) => {
     try {
-        const departamento = await Departamentos.destroy({
+        const departamento = await Departamento.destroy({
             where: {
                 id: req.params.id
             }
@@ -61,4 +61,4 @@ deleteDepartamentos = async (req, res, next) => {
     }
 }
 
-module.exports = { getDepartamentos, getDepartamentos, setDepartamentos, createDepartamentos, deleteDepartamentos };
+module.exports = { getDepartamentos, getDepartamento, setDepartamento, createDepartamento, deleteDepartamento };

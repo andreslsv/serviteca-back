@@ -9,6 +9,9 @@ var clave = require('./clave/clave');
 
 var indexRouter = require('./routes/index');
 var propietariosRouter = require('./routes/propietario');
+var paisRouter = require('./routes/pais');
+var departamentoRouter = require('./routes/departamento');
+var ciudadRouter = require('./routes/ciudad');
 
 var app = express();
 
@@ -26,5 +29,8 @@ app.set('llaveRefresh', clave.llaveRefresh);
 
 app.use('/', indexRouter);
 app.use('/propietarios', propietariosRouter);
+app.use('/pais', paisRouter);
+app.use('/departamento', departamentoRouter);
+app.use('/ciudad', ciudadRouter);
 
 module.exports = app;

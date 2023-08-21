@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             //Propietario.belongsToMany(models.Role, { through:'Role_Propietario', foreignKey:'permisoId'});
         }
     }
-    Propietario.init({
+    Pais.init({
         id: {
             allowNull: false,
             autoIncrement: true,

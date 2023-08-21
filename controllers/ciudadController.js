@@ -1,31 +1,31 @@
 const models = require('../models')
-const Pais = models.Pais;
+const Ciudad = models.Ciudad;
 
-getPaises = async (req, res, next) => {
+getCiudades = async (req, res, next) => {
     try {
-        const paises = await Pais.findAll();
-        res.json(paises);
+        const ciudades = await Ciudad.findAll();
+        res.json(ciudades);
     } catch (error) {
         res.send(error);
     }
 }
 
-getPais = async (req, res, next) => {
+getCiudad = async (req, res, next) => {
     try {
-        const pais = await Pais.findOne({
+        const ciudad = await Ciudad.findOne({
             where: {
                 id: req.params.id
             }
         });
-        res.send(pais);
+        res.send(ciudad);
     } catch (error) {
         res.send(error);
     }
 }
 
-setPais = async (req, res, next) => {
+setCiudad = async (req, res, next) => {
     try {
-        const pais = await Pais.update(
+        const ciudad = await Ciudad.update(
             req.body,
             {
                 where: {
@@ -33,24 +33,24 @@ setPais = async (req, res, next) => {
                 }
             }
         );
-        res.json(pais);
+        res.json(ciudad);
     } catch (error) {
         res.send(error);
     }
 }
 
-createPais = async (req, res, next) => {
+createCiudad = async (req, res, next) => {
     try {
-        const pais = await Pais.create(req.body);
-        res.json(pais);
+        const ciudad = await Ciudad.create(req.body);
+        res.json(ciudad);
     } catch (error) {
         res.send(error);
     }
 }
 
-deletePais = async (req, res, next) => {
+deleteCiudad = async (req, res, next) => {
     try {
-        const pais = await Pais.destroy({
+        const ciudad = await Ciudad.destroy({
             where: {
                 id: req.params.id
             }
@@ -61,4 +61,4 @@ deletePais = async (req, res, next) => {
     }
 }
 
-module.exports = { getPaises, getPais, setPais, createPais, deletePais };
+module.exports = { getCiudades, getCiudad, setCiudad, createCiudad, deleteCiudad };

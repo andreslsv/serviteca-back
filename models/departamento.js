@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER
         },
         nombre: DataTypes.STRING,
-        departamentoId: DataTypes.INTEGER
+        paisId: DataTypes.INTEGER
     }, {
         sequelize,
         tableName: 'departamentos',
