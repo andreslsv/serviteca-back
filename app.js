@@ -12,6 +12,7 @@ var propietariosRouter = require('./routes/propietario');
 var paisRouter = require('./routes/pais');
 var departamentoRouter = require('./routes/departamento');
 var ciudadRouter = require('./routes/ciudad');
+var vehiculoRouter = require('./routes/vehiculo');
 
 var app = express();
 
@@ -32,5 +33,6 @@ app.use('/propietarios', propietariosRouter);
 app.use('/pais', paisRouter);
 app.use('/departamento', departamentoRouter);
 app.use('/ciudad', ciudadRouter);
+app.use('/vehiculo', vehiculoRouter);
 
 module.exports = app;
