@@ -13,6 +13,9 @@ module.exports = {
       placa: {
         type: Sequelize.STRING
       },
+      propietarioId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

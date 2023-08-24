@@ -11,7 +11,10 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            //Vehiculo.belongsToMany(models.Role, { through:'Role_Vehiculo', foreignKey:'permisoId'});
+            Vehiculo.belongsTo(models.Propietario, {
+                foreignKey: 'propietarioId',
+                //as: 'autor'
+              });
         }
     }
     Vehiculo.init({
@@ -21,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-        placa: DataTypes.STRING
+        placa: DataTypes.STRING,
+        propietarioId:DataTypes.INTEGER
     }, {
         sequelize,
         tableName: 'vehiculos',
