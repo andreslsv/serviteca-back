@@ -1,9 +1,10 @@
 const models = require('../models')
 const Modelo = models.Modelo;
+Marca = models.Marca;
 
 getModelos = async (req, res, next) => {
     try {
-        const modelos = await Modelo.findAll();
+        const modelos = await Modelo.findAll({ include: [Marca] });
         res.json(modelos);
     } catch (error) {
         res.send(error);
@@ -12,7 +13,7 @@ getModelos = async (req, res, next) => {
 
 getModelo = async (req, res, next) => {
     try {
-        const modelo = await Modelo.findOne({
+        const modelo = await Modelo.findOne({ include: [Marca] }, {
             where: {
                 id: req.params.id
             }
@@ -55,7 +56,7 @@ deleteModelo = async (req, res, next) => {
                 id: req.params.id
             }
         });
-        res.json({eliminado:req.params.id});
+        res.json({ eliminado: req.params.id });
     } catch (error) {
         res.send(error);
     }
