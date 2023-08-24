@@ -1,9 +1,10 @@
 const models = require('../models')
 const Departamento = models.Departamento;
+const Pais = models.Pais;
 
 getDepartamentos = async (req, res, next) => {
     try {
-        const departamentos = await Departamento.findAll();
+        const departamentos = await Departamento.findAll({ include: [Pais] });
         res.json(departamentos);
     } catch (error) {
         res.send(error);
@@ -12,7 +13,7 @@ getDepartamentos = async (req, res, next) => {
 
 getDepartamento = async (req, res, next) => {
     try {
-        const departamento = await Departamento.findOne({
+        const departamento = await Departamento.findOne({ include: [Pais] },{
             where: {
                 id: req.params.id
             }

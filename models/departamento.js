@@ -12,8 +12,15 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             Departamento.hasMany(models.Ciudad, {
                 foreignKey: 'departamentoId',
-                //as: 'publicaciones'
+                //as: 'Pais'
             });
+
+            Departamento.belongsTo(models.Pais, {
+                foreignKey: 'paisId',
+                //as: 'Pais'
+            });
+
+            
         }
     }
     Departamento.init({
