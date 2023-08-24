@@ -1,9 +1,10 @@
 const models = require('../models')
 const Ciudad = models.Ciudad;
+const Departamento = models.Departamento;
 
 getCiudades = async (req, res, next) => {
     try {
-        const ciudades = await Ciudad.findAll();
+        const ciudades = await Ciudad.findAll({ include: [Departamento] });
         res.json(ciudades);
     } catch (error) {
         res.send(error);
@@ -12,7 +13,7 @@ getCiudades = async (req, res, next) => {
 
 getCiudad = async (req, res, next) => {
     try {
-        const ciudad = await Ciudad.findOne({
+        const ciudad = await Ciudad.findOne({ include: [Departamento] },{
             where: {
                 id: req.params.id
             }
