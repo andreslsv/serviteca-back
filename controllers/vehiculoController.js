@@ -50,8 +50,15 @@ setVehiculo = async (req, res, next) => {
 
 createVehiculo = async (req, res, next) => {
     try {
-        const vehiculo = await Vehiculo.create(req.body);
-        res.json(vehiculo);
+        const vehiculoCreado = await Vehiculo.create(req.body);
+
+        const vehiculoSeleccionado = await Vehiculo.findByPk(vehiculoCreado.id, {
+            include: [Propietario, {
+                model: Modelo, include: [Marca]
+            }]
+        });
+
+        res.json(vehiculoSeleccionado);
     } catch (error) {
         res.send(error);
     }
