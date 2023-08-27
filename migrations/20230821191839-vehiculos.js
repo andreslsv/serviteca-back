@@ -13,6 +13,18 @@ module.exports = {
       placa: {
         type: Sequelize.STRING
       },
+      tipo: {
+        type: Sequelize.INTEGER
+      },
+      descripcion: {
+        type: Sequelize.STRING
+      },
+      anio: {
+        type: Sequelize.STRING
+      },
+      modeloId: {
+        type: Sequelize.INTEGER
+      },
       propietarioId: {
         type: Sequelize.INTEGER
       },

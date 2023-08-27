@@ -1,10 +1,16 @@
 const models = require('../models');
 const Propietario = models.Propietario;
 const Vehiculo = models.Vehiculo;
+const Modelo = models.Modelo;
+const Marca = models.Marca;
 
 getVehiculos = async (req, res, next) => {
     try {
-        const vehiculos = await Vehiculo.findAll({ include: [Propietario] });
+        const vehiculos = await Vehiculo.findAll({
+            include: [Propietario, {
+                model: Modelo, include: [Marca]
+            }]
+        });
         res.json(vehiculos);
     } catch (error) {
         res.send(error);

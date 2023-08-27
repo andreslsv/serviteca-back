@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
             Vehiculo.belongsTo(models.Propietario, {
                 foreignKey: 'propietarioId',
                 //as: 'autor'
-              });
+            });
+            Vehiculo.belongsTo(models.Modelo, {
+                foreignKey: 'modeloId',
+                //as: 'autor'
+            });
         }
     }
     Vehiculo.init({
@@ -25,7 +29,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER
         },
         placa: DataTypes.STRING,
-        propietarioId:DataTypes.INTEGER
+        anio: DataTypes.STRING,
+        descripcion: DataTypes.STRING,
+        tipo:DataTypes.INTEGER,
+        propietarioId:DataTypes.INTEGER,
+        modeloId:DataTypes.INTEGER,
     }, {
         sequelize,
         tableName: 'vehiculos',
